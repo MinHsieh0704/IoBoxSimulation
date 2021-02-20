@@ -5,26 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IoBoxSimulation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="327.384" Width="359.809" FontSize="18">
+        Title="MainWindow" Height="327.384" Width="424.795" FontSize="18">
     <Grid>
         <TextBlock x:Name="lb_port" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port: " VerticalAlignment="Top" Margin="28,26,0,0"/>
-        <TextBox x:Name="input_port" PreviewTextInput="input_port_PreviewTextInput" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="83,21,0,0" Padding="4"/>
-        <Button x:Name="btn_action" Content="open" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="239,22,0,0" Padding="4" Click="btn_action_Click"/>
-        <TextBlock x:Name="lb_do0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DO0" VerticalAlignment="Top" Margin="62,87,0,0"/>
-        <RadioButton x:Name="rb_do0_on" GroupName="do0" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,88,0,0"/>
-        <RadioButton x:Name="rb_do0_off" GroupName="do0" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227,88,0,0"/>
+        <TextBox x:Name="input_port" TextAlignment="Center" PreviewTextInput="input_port_PreviewTextInput" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="83,21,0,0" Padding="4"/>
+        <Button x:Name="btn_action" Content="open" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="315,21,0,0" Padding="4" Click="btn_action_Click"/>
 
-        <TextBlock x:Name="lb_do1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DO1" VerticalAlignment="Top" Margin="62,139,0,0"/>
-        <RadioButton x:Name="rb_do1_on" GroupName="do1" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,141,0,0"/>
-        <RadioButton x:Name="rb_do1_off" GroupName="do1" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227,141,0,0"/>
+        <TextBlock x:Name="lb_di0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DI 0" VerticalAlignment="Top" Margin="95,87,0,0"/>
+        <RadioButton x:Name="rb_di0_on" GroupName="di0" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,88,0,0"/>
+        <RadioButton x:Name="rb_di0_off" GroupName="di0" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260,88,0,0"/>
 
-        <TextBlock x:Name="lb_do2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DO2" VerticalAlignment="Top" Margin="62,187,0,0"/>
-        <RadioButton x:Name="rb_do2_on" GroupName="do2" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,194,0,0"/>
-        <RadioButton x:Name="rb_do2_off" GroupName="do2" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227,194,0,0"/>
+        <TextBlock x:Name="lb_di1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DI 1" VerticalAlignment="Top" Margin="95,137,0,0"/>
+        <RadioButton x:Name="rb_di1_on" GroupName="di1" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,139,0,0"/>
+        <RadioButton x:Name="rb_di1_off" GroupName="di1" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260,139,0,0"/>
 
-        <TextBlock x:Name="lb_do3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DO3" VerticalAlignment="Top" Margin="62,242,0,0"/>
-        <RadioButton x:Name="rb_do3_on" GroupName="do3" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,244,0,0"/>
-        <RadioButton x:Name="rb_do3_off" GroupName="do3" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227,244,0,0"/>
+        <TextBlock x:Name="lb_di2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DI 2" VerticalAlignment="Top" Margin="95,187,0,0"/>
+        <RadioButton x:Name="rb_di2_on" GroupName="di2" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,194,0,0"/>
+        <RadioButton x:Name="rb_di2_off" GroupName="di2" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260,194,0,0"/>
+
+        <TextBlock x:Name="lb_di3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DI 3" VerticalAlignment="Top" Margin="95,242,0,0"/>
+        <RadioButton x:Name="rb_di3_on" GroupName="di3" Content="ON" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,244,0,0"/>
+        <RadioButton x:Name="rb_di3_off" GroupName="di3" Content="OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260,244,0,0"/>
 
     </Grid>
 </Window>

@@ -32,10 +32,10 @@ namespace IoBoxSimulation
         /// </summary>
         private void InitializeState()
         {
-            rb_do0_off.IsChecked = true;
-            rb_do1_off.IsChecked = true;
-            rb_do2_off.IsChecked = true;
-            rb_do3_off.IsChecked = true;
+            rb_di0_off.IsChecked = true;
+            rb_di1_off.IsChecked = true;
+            rb_di2_off.IsChecked = true;
+            rb_di3_off.IsChecked = true;
         }
 
         private void btn_action_Click(object sender, RoutedEventArgs e)
@@ -72,6 +72,25 @@ namespace IoBoxSimulation
             {
                 e.Handled = true;
             }
+
+        }
+
+        private void input_di_count_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            try
+            {
+                // validate number range 2 - 4
+                Regex regex = new Regex("^[2-4]+$");
+                e.Handled = !regex.IsMatch(e.Text);           
+            }
+            catch (Exception)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void input_di_count_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
         }
     }
