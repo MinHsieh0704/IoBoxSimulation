@@ -9,6 +9,7 @@
     <Grid>
         <TextBlock x:Name="lb_port" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port: " VerticalAlignment="Top" Margin="28,26,0,0"/>
         <TextBox x:Name="input_port" TextAlignment="Center" PreviewTextInput="input_port_PreviewTextInput" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="83,21,0,0" Padding="4"/>
+        <TextBox x:Name="input_di_count" TextAlignment="Center" PreviewTextInput="input_di_count_PreviewTextInput" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" Margin="234,21,0,0" Padding="4"/>
         <Button x:Name="btn_action" Content="open" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="315,21,0,0" Padding="4" Click="btn_action_Click"/>
 
         <TextBlock x:Name="lb_di0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="DI 0" VerticalAlignment="Top" Margin="95,87,0,0"/>
