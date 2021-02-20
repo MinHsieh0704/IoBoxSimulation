@@ -21,17 +21,27 @@ namespace IoBoxSimulation
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Grid[] diGroups = new Grid[] { };
         public MainWindow()
         {
             InitializeComponent();
+
             InitializeState();
         }
 
-        /// <summary>
-        /// Initialize default state
-        /// </summary>
         private void InitializeState()
         {
+            diGroups = new Grid[]
+            {
+                g_di0,
+                g_di1,
+                g_di2,
+                g_di3
+            };
+
+            input_port.Text = "80";
+            input_di_count.Text = "2";
+
             rb_di0_off.IsChecked = true;
             rb_di1_off.IsChecked = true;
             rb_di2_off.IsChecked = true;
@@ -91,7 +101,34 @@ namespace IoBoxSimulation
 
         private void input_di_count_TextChanged(object sender, TextChangedEventArgs e)
         {
+            try
+            {
+                int diCount = int.Parse(input_di_count.Text);
+                InitializeDIControls(diCount);
+            }
+            catch (Exception)
+            {
+                // error
+            }
+        }
 
+        /// <summary>
+        /// Initialize DI controls
+        /// </summary>
+        /// <param name="diCount">2 - 4</param>
+        private void InitializeDIControls(int diCount)
+        {
+            input_di_count.Text = diCount.ToString();
+
+            for (int i = 0; i < diGroups.Length; i++)
+            {
+                diGroups[i].Visibility = Visibility.Hidden;
+            }
+
+            for (int i = 0; i < diCount; i++)
+            {
+                diGroups[i].Visibility = Visibility.Visible;
+            }
         }
     }
 }
