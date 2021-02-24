@@ -21,7 +21,26 @@ namespace IoBoxSimulation
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Grid[] diGroups = new Grid[] { };
+        /// <summary>
+        /// DI 群組
+        /// </summary>
+        private Grid[] diGroups = null;
+
+        /// <summary>
+        /// DI off radio buttons
+        /// </summary>
+        private RadioButton[] rbDIOffs = null;
+
+        /// <summary>
+        /// DI on radio buttons
+        /// </summary>
+        private RadioButton[] rbDIOns = null;
+
+        /// <summary>
+        /// current simulation status
+        /// </summary>
+        private bool isOpen = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -39,6 +58,22 @@ namespace IoBoxSimulation
                 g_di3
             };
 
+            rbDIOffs = new RadioButton[]
+            {
+                rb_di0_off,
+                rb_di1_off,
+                rb_di2_off,
+                rb_di3_off
+            };
+
+            rbDIOns = new RadioButton[]
+            {
+                rb_di0_on,
+                rb_di1_on,
+                rb_di2_on,
+                rb_di3_on
+            };
+
             input_port.Text = "80";
             input_di_count.Text = "2";
 
@@ -46,17 +81,54 @@ namespace IoBoxSimulation
             rb_di1_off.IsChecked = true;
             rb_di2_off.IsChecked = true;
             rb_di3_off.IsChecked = true;
+
+            CloseSimulation();
         }
 
         private void btn_action_Click(object sender, RoutedEventArgs e)
         {
-            if (btn_action.Content?.ToString() == "open")
+            if (isOpen)
             {
-                btn_action.Content = "close";
+                CloseSimulation();
             } 
             else
             {
-                btn_action.Content = "open";
+                OpenSimulation();
+            }
+        }
+
+        private void OpenSimulation()
+        {
+            isOpen = true;
+            btn_action.Content = "close";
+
+            input_port.IsEnabled = false;
+            input_di_count.IsEnabled = false;
+
+            EnableAllDIRadioButtons(true);
+        }
+
+        private void CloseSimulation()
+        {
+            isOpen = false;
+            btn_action.Content = "open";
+
+            input_port.IsEnabled = true;
+            input_di_count.IsEnabled = true;
+
+            EnableAllDIRadioButtons(false);
+        }
+
+        /// <summary>
+        /// Enable or Disable all DI radio buttons
+        /// </summary>
+        /// <param name="isEnabled"></param>
+        private void EnableAllDIRadioButtons(bool isEnabled)
+        {
+            for (int i = 0; i < diGroups.Length; i++)
+            {
+                rbDIOffs[i].IsEnabled = isEnabled;
+                rbDIOns[i].IsEnabled = isEnabled;
             }
         }
 
