@@ -11,9 +11,9 @@ namespace IoBoxSimulation
     /// </summary>
     public partial class App : Application
     {
-        public Print PrintService { get; set; }
+        public static Print PrintService { get; set; }
 
-        public Log LogService { get; set; }
+        public static Log LogService { get; set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
