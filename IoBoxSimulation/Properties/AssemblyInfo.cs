@@ -8,9 +8,9 @@ using System.Windows;
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
 [assembly: AssemblyTitle("IoBoxSimulation")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("IoBoxSimulation")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Min.Hsieh")]
 [assembly: AssemblyProduct("IoBoxSimulation")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
@@ -51,5 +51,5 @@ using System.Windows;
 // 您可以指定所有的值，也可以使用 '*' 將組建和修訂編號
 // 設為預設，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.00.00")]
+[assembly: AssemblyFileVersion("1.00.00")]
