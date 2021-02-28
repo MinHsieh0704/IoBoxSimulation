@@ -64,7 +64,7 @@ namespace IoBoxSimulation
                 rb_di3_on
             };
 
-            input_port.Text = "80";
+            input_port.Text = "12345";
             input_di_count.Text = "2";
 
             rb_di0_off.IsChecked = true;
