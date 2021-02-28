@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Min_Helpers.LogHelper;
+using Min_Helpers.PrintHelper;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 
 namespace IoBoxSimulation
@@ -13,5 +11,29 @@ namespace IoBoxSimulation
     /// </summary>
     public partial class App : Application
     {
+        public static Print PrintService { get; set; }
+
+        public static Log LogService { get; set; }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+
+            LogService = new Log();
+            PrintService = new Print(LogService);
+
+            LogService.Write("");
+            PrintService.Log("App Start", Print.EMode.info);
+
+            base.OnStartup(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            PrintService.Log("App End", Print.EMode.info);
+
+            base.OnExit(e);
+        }
     }
 }
