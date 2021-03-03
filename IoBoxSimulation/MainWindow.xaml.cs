@@ -219,13 +219,13 @@ namespace IoBoxSimulation
                                     string message = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                                     message = message.Replace("\n", "").Replace("\r", "");
 
-                                    if (message == "AT+STACH0=?")
+                                    if (message == "AT+OCCH0=?")
                                     {
                                         this.Dispatcher.Invoke(new Action(() =>
                                         {
                                             string disStatus = rbDIOns
                                                 .Take(Convert.ToInt32(input_di_count.Text))
-                                                .Select((n, i) => $"+STACH{i + 1}:{(n.IsChecked == true ? 1 : 0)},100000")
+                                                .Select((n, i) => $"+OCCH{i + 1}:{(n.IsChecked == true ? 1 : 0)}")
                                                 .Aggregate((prev, curr) => prev += $"\r\n{curr}");
 
                                             byte[] byteData = Encoding.ASCII.GetBytes($"{disStatus}\r\n");
