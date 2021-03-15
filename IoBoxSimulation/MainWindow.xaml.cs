@@ -36,6 +36,21 @@ namespace IoBoxSimulation
         private RadioButton[] rbDIOns = null;
 
         /// <summary>
+        /// DO 群組
+        /// </summary>
+        private Grid[] doGroups = null;
+
+        /// <summary>
+        /// DO off radio buttons
+        /// </summary>
+        private RadioButton[] rbDOOffs = null;
+
+        /// <summary>
+        /// DO on radio buttons
+        /// </summary>
+        private RadioButton[] rbDOOns = null;
+
+        /// <summary>
         /// current simulation status
         /// </summary>
         private bool isOpen = false;
@@ -155,6 +170,30 @@ namespace IoBoxSimulation
                 rb_di3_on
             };
 
+            doGroups = new Grid[]
+            {
+                g_do0,
+                g_do1,
+                g_do2,
+                g_do3
+            };
+
+            rbDOOffs = new RadioButton[]
+            {
+                rb_do0_off,
+                rb_do1_off,
+                rb_do2_off,
+                rb_do3_off
+            };
+
+            rbDOOns = new RadioButton[]
+            {
+                rb_do0_on,
+                rb_do1_on,
+                rb_do2_on,
+                rb_do3_on
+            };
+
             input_port.Text = "12345";
             input_di_count.Text = "2";
 
@@ -162,6 +201,11 @@ namespace IoBoxSimulation
             rb_di1_off.IsChecked = true;
             rb_di2_off.IsChecked = true;
             rb_di3_off.IsChecked = true;
+
+            rb_do0_off.IsChecked = true;
+            rb_do1_off.IsChecked = true;
+            rb_do2_off.IsChecked = true;
+            rb_do3_off.IsChecked = true;
 
             CloseSimulation();
         }
@@ -308,6 +352,12 @@ namespace IoBoxSimulation
                 rbDIOffs[i].IsEnabled = isEnabled;
                 rbDIOns[i].IsEnabled = isEnabled;
             }
+
+            for (int i = 0; i < diGroups.Length; i++)
+            {
+                rbDOOffs[i].IsEnabled = isEnabled;
+                rbDOOns[i].IsEnabled = isEnabled;
+            }
         }
 
         /// <summary>
@@ -326,6 +376,16 @@ namespace IoBoxSimulation
             for (int i = 0; i < diCount; i++)
             {
                 diGroups[i].Visibility = Visibility.Visible;
+            }
+
+            for (int i = 0; i < diGroups.Length; i++)
+            {
+                doGroups[i].Visibility = Visibility.Hidden;
+            }
+
+            for (int i = 0; i < diCount; i++)
+            {
+                doGroups[i].Visibility = Visibility.Visible;
             }
         }
     }
