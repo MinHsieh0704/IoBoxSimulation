@@ -104,8 +104,8 @@ namespace IoBoxSimulation
         {
             try
             {
-                // validate number range 2 - 4
-                Regex regex = new Regex("^[2-4]+$");
+                // validate number range 1 - 4
+                Regex regex = new Regex("^[1-4]+$");
                 e.Handled = !regex.IsMatch(e.Text);
             }
             catch (Exception ex)
